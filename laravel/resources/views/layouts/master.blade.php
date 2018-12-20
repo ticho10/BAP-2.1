@@ -7,7 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    @section('styles')
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    @show
     <title>MediaCollege Amsterdam - @yield('title')</title>
 </head>
 <body>
@@ -28,7 +30,7 @@
                             <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="{{ route('kip') }}">kip</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pricing</a>

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/kip', function () {
     return view('kip');
-});
+})->name('kip');
 
 Route::get('/hond', function () {
     return "KOULO HOND";
@@ -54,6 +54,7 @@ Route::get('/artikel/{naam}', function($naam){
 Route::get('/test', 'TestController@test');
 
 
+Route::get('/skaters', 'SkatersController@test');
 
 
 
@@ -73,3 +74,18 @@ Route::get('/test', 'TestController@test');
 
 
 
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+//photo Galery
+Route::get('/photo-gallery', 'PhotoGalleryController@listPhotos')
+->name('gallery.index');
+Route::get('/photo-gallery/add-photo', 'PhotoGalleryController@showPhotoForm')
+    ->name('gallery.add_photo');
+Route::post('/photo-gallery/add-photo', 'PhotoGalleryController@savePhotoForm')
+    ->name('gallery.save_photo');
